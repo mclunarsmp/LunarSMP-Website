@@ -27,25 +27,6 @@ lFollowX = (20 * lMouseX) / 100; // 100 : 12 = lMouxeX : lFollow
 lFollowY = (10 * lMouseY) / 100;
 
 });
-// function copyToClipboard(text) {
-//     // Tạo một phần tử input tạm thời để chứa văn bản
-//     const input = document.createElement('input');
-//     input.value = text;
-//       document.body.appendChild(input);
-
-//     // Chọn văn bản trong input
-//     input.select();
-//     input.setSelectionRange(0, 99999); // Dành cho di động
-
-//     // Sao chép văn bản vào clipboard
-//     document.execCommand('copy');
-
-//     // Xóa phần tử input tạm thời
-//      document.body.removeChild(input);
-
-//     // Thông báo cho người dùng (tuỳ chọn)
-//     alert('Đã sao chép liên kết vào clipboard: ' + text);
-//     }
 
 function copyToClipboard(text) {
     // Create a temporary input element
