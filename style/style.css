@@ -163,7 +163,7 @@ button:hover {
   position: absolute;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  background-image: url(../images/background.jpg);
+  background-image: url(..//assets/Backgrounds/background.jpg);
   background-size: cover;
   background-position: center;
   top: 0;
@@ -239,7 +239,7 @@ Content
 .content h1 {
   font-weight: 700;
   font-size: 165px;
-  opacity: 0.5;
+  opacity: 0.75;
   color: #eee;
 }
 
@@ -302,6 +302,35 @@ a.brand-logo {
 .copy-right p a {
   color: #fff;
 }
+
+/* Common Style for Both Buttons */
+.home, .discord-button, .ip-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(to right, #4f46e5, #4338ca);
+  border-radius: 9999px;
+  border: none;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  max-width: 200px;
+  max-height: 48px;
+}
+
+.home:hover, .discord-button:hover, .ip-button:hover {
+  background: linear-gradient(to right, #6366f1, #4f46e5);
+}
+
+/* Icon Styling */
+.discord-button i, .ip-button i {
+  margin-right: 8px;
+  font-size: 1.2rem;
+}
+
 
 /*--------------------
 Image
