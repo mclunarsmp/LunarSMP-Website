@@ -28,7 +28,7 @@
                     <h1>Máy chủ SMP Việt Nam</h1>
                     <p>Hãy tham gia các nhóm cộng đồng tại đây nhé!</p>
                     <a href="https://discord.gg/nWpY9YUv78" class="home">Discord</a>
-                    <a href="https://discord.superhori.com/" class="home">Go to Facebook Page</a>
+                    <a href="#" class="home" onclick="copyToClipboard('mclunar.online')">Copy IP Server</a>
                 </div>
             </div>
         </div>
@@ -65,7 +65,25 @@
                 lFollowY = (10 * lMouseY) / 100;
 
             });
+            function copyToClipboard(text) {
+                // Tạo một phần tử input tạm thời để chứa văn bản
+                const input = document.createElement('input');
+                input.value = text;
+                  document.body.appendChild(input);
+    
+                // Chọn văn bản trong input
+                input.select();
+                input.setSelectionRange(0, 99999); // Dành cho di động
 
+                // Sao chép văn bản vào clipboard
+                document.execCommand('copy');
+
+                // Xóa phần tử input tạm thời
+                 document.body.removeChild(input);
+
+                // Thông báo cho người dùng (tuỳ chọn)
+                alert('Đã sao chép liên kết vào clipboard: ' + text);
+                }
             animate();
         </script>
     </div>
