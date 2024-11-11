@@ -54,7 +54,7 @@ function setBackground() {
   const imageList = images[folderName];
   const randomImage = imageList[Math.floor(Math.random() * imageList.length)];
 
-  const backgroundPath = `assets/backgrounds/DayTime/${folderName}/${randomImage}`;
+  const backgroundPath = `./assets/backgrounds/DayTime/${folderName}/${randomImage}`;
   document.querySelector('.page').style.backgroundImage = `url('${backgroundPath}')`;
 }
 
