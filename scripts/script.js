@@ -23,47 +23,57 @@ $(window).on('mousemove click', function (e) {
 
 var lMouseX = Math.max(-100, Math.min(100, $(window).width() / 2 - e.clientX));
 var lMouseY = Math.max(-100, Math.min(100, $(window).height() / 2 - e.clientY));
-lFollowX = (20 * lMouseX) / 100; // 100 : 12 = lMouxeX : lFollow
+lFollowX = (20 * lMouseX) / 100; 
 lFollowY = (10 * lMouseY) / 100;
 
 });
-// function copyToClipboard(text) {
-//     // Tạo một phần tử input tạm thời để chứa văn bản
-//     const input = document.createElement('input');
-//     input.value = text;
-//       document.body.appendChild(input);
 
-//     // Chọn văn bản trong input
-//     input.select();
-//     input.setSelectionRange(0, 99999); // Dành cho di động
+function setBackground() {
+  const currentHour = new Date().getHours();
+  const currentMinute = new Date().getMinutes();
+  let folderName;
 
-//     // Sao chép văn bản vào clipboard
-//     document.execCommand('copy');
+  if (currentHour >= 5 && (currentHour < 12 || (currentHour === 11 && currentMinute < 59))) {
+      folderName = 'Morning';
+  } else if ((currentHour === 12 && currentMinute === 0) || (currentHour >= 12 && currentHour < 16) || (currentHour === 16 && currentMinute < 30)) {
+      folderName = 'Afternoon';
+  } else if (currentHour === 16 && currentMinute >= 30 || (currentHour === 17 && currentMinute < 30)) {
+      folderName = 'Evening';
+  } else {
+      folderName = 'Night';
+  }
 
-//     // Xóa phần tử input tạm thời
-//      document.body.removeChild(input);
+  const images = {
+      Morning: ['morning1.jpg', 'morning2.jpg', 'morning3.jpg'],
+      Afternoon: ['afternoon1.jpg', 'afternoon2.jpg', 'afternoon3.jpg'],
+      Evening: ['evening1.jpg', 'evening2.jpg', 'evening3.jpg'],
+      Night: ['night1.jpg', 'night2.jpg', 'night3.jpg', 'night4.jpg']
+  };
 
-//     // Thông báo cho người dùng (tuỳ chọn)
-//     alert('Đã sao chép liên kết vào clipboard: ' + text);
-//     }
+
+  const imageList = images[folderName];
+  const randomImage = imageList[Math.floor(Math.random() * imageList.length)];
+
+  const backgroundPath = `assets/backgrounds/DayTime/${folderName}/${randomImage}`;
+  document.querySelector('.page').style.backgroundImage = `url('${backgroundPath}')`;
+}
+
+document.addEventListener('DOMContentLoaded', setBackground);
+
+  
+  
 
 function copyToClipboard(text) {
-    // Create a temporary input element
     const tempInput = document.createElement('input');
     tempInput.style.position = 'absolute';
     tempInput.style.left = '-9999px';
     tempInput.value = text;
     document.body.appendChild(tempInput);
-    
-    // Select the text in the input and copy it
     tempInput.select();
-    tempInput.setSelectionRange(0, 99999); // For mobile devices
+    tempInput.setSelectionRange(0, 99999); 
     document.execCommand('copy');
-    
-    // Remove the temporary input element
     document.body.removeChild(tempInput);
-    
-    // Optionally, show an alert or message to confirm the copy
     alert('Đã copy địa chỉ vào server: ' + text);
 }
+
 animate();
