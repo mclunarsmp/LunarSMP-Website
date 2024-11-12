@@ -1,50 +1,56 @@
-var lFollowX = 0,
-lFollowY = 0,
-x = 0,
-y = 0,
-friction = 1 / 30;
-
-function animate() {
-x += (lFollowX - x) * friction;
-y += (lFollowY - y) * friction;
-
-translate = 'translate(' + x + 'px, ' + y + 'px) scale(1.1)';
-
-$('.page').css({
-    '-webit-transform': translate,
-    '-moz-transform': translate,
-    'transform': translate
-});
-
-window.requestAnimationFrame(animate);
-}
-
-$(window).on('mousemove click', function (e) {
-
-var lMouseX = Math.max(-100, Math.min(100, $(window).width() / 2 - e.clientX));
-var lMouseY = Math.max(-100, Math.min(100, $(window).height() / 2 - e.clientY));
-lFollowX = (20 * lMouseX) / 100; // 100 : 12 = lMouxeX : lFollow
-lFollowY = (10 * lMouseY) / 100;
-
-});
-
-function copyToClipboard(text) {
-    // Create a temporary input element
-    const tempInput = document.createElement('input');
-    tempInput.style.position = 'absolute';
-    tempInput.style.left = '-9999px';
-    tempInput.value = text;
-    document.body.appendChild(tempInput);
-    
-    // Select the text in the input and copy it
-    tempInput.select();
-    tempInput.setSelectionRange(0, 99999); // For mobile devices
-    document.execCommand('copy');
-    
-    // Remove the temporary input element
-    document.body.removeChild(tempInput);
-    
-    // Optionally, show an alert or message to confirm the copy
-    alert('Đã copy địa chỉ vào server: ' + text);
-}
-animate();
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>LunarSMP - Máy chủ Minecraft Việt Nam</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style/style.css" type="text/css" media="all" />
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Font Awesome Library -->
+    <link rel="icon" type="image/x-icon" href="/assets/Logo/logo.ico">
+    <meta content="LunarSMP - Máy chủ Minecraft Việt Nam" property="og:title" />
+    <meta content="
+    LunarSMP là một server Minecraft SMP Việt Nam, mang đến một trải nghiệm chơi game công bằng, thú vị và đầy niềm vui. Với hệ thống chống gian lận khỏe, Mods và cộng đồng thân thiện cùng các tính năng sự kiện và Giveaway. LunarSMP tạo ra không gian để bạn kết bạn và khám phá thế giới Minecraft. Bên cạnh đó, server luôn chú trọng bảo mật để đảm bảo trải nghiệm chơi game an toàn và công bằng cho mọi người. Hãy tham gia ngay server nào!" property="og:description" />
+    <meta content="#43B581" data-react-helmet="true" name="theme-color" />
+    <meta name="keywords" content="Minecraft server Việt Nam, Server sinh tồn Minecraft, Server Minecraft 1.20, Server PvP Việt Nam, Minecraft server không lag, Minecraft server Việt Nam free, Server Minecraft multiplayer, Minecraft server 24/7, Server Minecraft Việt Nam mạnh, Minecraft server chơi cùng bạn, Minecraft server cao cấp, Minecraft server kết nối nhanh, Minecraft server miễn phí, Server Minecraft Việt Nam mới, Minecraft server sinh tồn 1.20, Minecraft server Việt Nam chất lượng, Server Minecraft tối ưu, Minecraft server kinh nghiệm, Server Minecraft công bằng, Minecraft server chơi vui.">
+</head>
+<body>
+    <div class="Coming-block">
+        <div class="page"></div>
+        <div class="content">
+            <div class="logo">
+                <a class="brand-logo" href="index.html">
+                    <img src="assets/Logo/logo.png" style="height:135px;" alt="Logo"/>
+                </a> 
+            </div>
+            <div class="w3l-coming-soon-page">
+                <div class="coming-block">
+                    <h1>Máy chủ SMP Việt Nam</h1>
+                    <p>Hãy tham gia các nhóm cộng đồng tại đây nhé!</p>
+                    <div style="display: flex; justify-content: center; gap: 10px;" class="mt-10 relative z-10">
+                        <!-- Discord Button -->
+                        <a href="#" class="discord-button" onclick="window.open('http://dsc.gg/mclunarsmp')">
+                            <i class="fas fa-comment-alt"></i> Máy Chủ Discord
+                        </a>
+                        <!-- IP Copy Button -->
+                        <a href="#" class="ip-button" onclick="copyToClipboard('mclunar.online')">
+                            <i class="fas fa-gamepad"></i> mclunar.online
+                         <!-- Rules -->
+                        <a href="#" class="ip-button" onclick="window.open('https://lunarsmp.gitbook.io/lunarsmp/luat-may-chu/rules1')">
+                            <i class="fa fa-balance-scale"></i> Luật trong Server 
+                        <a href="#" class="ip-button" onclick="window.open('https://lunarsmp.gitbook.io/lunarsmp/luat-may-chu/hethongxuphat')">
+                            <i class="fa fa-gavel"></i> Hệ thống xử phạt
+                        <a href="#" class="ip-button" onclick="window.open('https://lunarsmp.gitbook.io/lunarsmp/wiki/lenhcoban')">
+                            <i class="fa fa-book"></i> Wiki
+                        <a href="#" class="ip-button" onclick="window.open('https://lunarsmp.gitbook.io/lunarsmp/wiki/donate')">
+                            <i class="fa fa-credit-card"></i> Donate
+                        </a>
+                    </div>                                                                           
+                </div>
+            </div>
+        </div>
+        
+        <script src="scripts/jquery-3.3.1.min.js"></script>
+        <script src="scripts/script.js"></script> <!-- Custom Script File -->
+    </div>
+</body>
+</html>
