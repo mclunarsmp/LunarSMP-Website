@@ -1,4 +1,3 @@
-
 html {
   scroll-behavior: smooth;
 }
@@ -43,6 +42,7 @@ select {
   outline: none;
 }
 
+
 button,
 .btn,
 select {
@@ -59,7 +59,7 @@ iframe {
 
 ul {
   margin: 0;
-  padding: 0
+  padding: 0;
 }
 
 h1,
@@ -70,7 +70,7 @@ h5,
 h6,
 p {
   margin: 0;
-  padding: 0
+  padding: 0;
 }
 
 p {
@@ -154,7 +154,7 @@ button:hover {
   margin-left: auto;
 }
 
-.Coming-block{
+.Coming-block {
   position: relative;
   overflow: hidden;
 }
@@ -163,7 +163,6 @@ button:hover {
   position: absolute;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  background-image: url(..//assets/Backgrounds/background.jpg);
   background-size: cover;
   background-position: center;
   top: 0;
@@ -185,7 +184,7 @@ header {
 header .logo {
   margin: 0 auto;
   text-align: center;
-  margin-bottom: -17px;
+  margin-bottom: -15px;
 }
 
 header .logo svg {
@@ -237,7 +236,7 @@ Content
 }
 
 .content h1 {
-  font-weight: 700;
+  font-weight: 5;
   font-size: 165px;
   opacity: 0.75;
   color: #eee;
@@ -250,6 +249,7 @@ Content
 }
 
 .content p {
+  margin-top: 10%;
   font-size: 16px;
   color: #eee;
   line-height: 25px;
@@ -338,8 +338,8 @@ Image
 
 @media (max-width: 440px) {
   a.brand-logo {
-    font-size: 30px;
-    line-height: 35px;
+    font-size: 50px;
+    line-height: 40px;
   }
 }
 
@@ -352,12 +352,14 @@ Image
   padding: 1em;
 }
 
+/* Máy chủ SMP Việt Nam*/
 .w3l-coming-soon-page h1 {
-  margin: 0;
-  font-size: 100px !important;
+  width: auto;
+  margin-top: 28px;
+  font-size: 100px;
   font-weight: 700;
-  color: #fff;
-  line-height: 100px;
+  color: #ffffff;
+  line-height: 1.2; /* 100px */
   text-transform: uppercase;
 }
 
@@ -372,10 +374,10 @@ Image
 .w3l-coming-soon-page .countdown>div {
   float: left;
   min-width: 115px;
-  margin: 40px 0;
+  margin: 40px;
   font-size: 50px;
   font-weight: bold;
-  color: #fff;
+  color: #ffffff;
 }
 
 .w3l-coming-soon-page .countdown>div:last-child {
@@ -383,7 +385,8 @@ Image
 }
 
 .w3l-coming-soon-page p {
-  color: #fff;
+  color: #ffffff;
+  font-size: 14px;
   opacity: 0.8;
   letter-spacing: 1px;
   text-transform: capitalize;
@@ -392,7 +395,8 @@ Image
 .w3l-coming-soon-page .countdown span {
   position: relative;
   display: block;
-  font-size: 13px;
+  font-size: 10px;
+  white-space: nowrap;
   text-align: center;
   text-transform: uppercase;
   font-weight: 300;
@@ -413,90 +417,59 @@ Image
 @media (max-width: 568px) {
 
   .w3l-coming-soon-page .coming-block {
-    padding: 0em 1em;
+    margin-top: -80px;
+    padding: 0px 1em;
   }
 }
 
-
-@media (max-width: 991px) {
-  .w3l-coming-soon-page .coming-block {
-    margin: 30px auto;
-  }
-}
-
-@media (max-width: 800px) {
-  .w3l-coming-soon-page p {
-    margin-top: 10px;
-  }
-
-  .w3l-coming-soon-page h1 {
-    font-size: 80px !important;
-    line-height: 95px;
-  }
-}
-
-@media (max-width: 667px) {
+@media (max-width: 440px) {
   .w3l-coming-soon-page h1 {
     font-size: 70px !important;
-    line-height: 78px;
   }
 }
 
-@media (max-width: 600px) {
-  .w3l-coming-soon-page .countdown>div {
-    font-size: 34px;
-  }
 
-  .w3l-coming-soon-page a.brand-logo {
-    font-size: 32px;
-  }
-
+.mt-10.relative.z-10 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: nowrap; /* Allows wrapping */
+  flex-direction: row; /* Default horizontal layout on larger screens */
+  margin-top: 20px;
 }
 
-@media (max-width: 500px) {
-  .w3l-coming-soon-page h1 {
-    font-size: 45px !important;
-    line-height: 50px;
-  }
-
-  .w3l-coming-soon-page .countdown>div {
-    font-size: 28px;
-    min-width: 80px;
-  }
-
-  .w3l-coming-soon-page p {
-    letter-spacing: 0px;
-  }
-
+/* Button styles */
+.home, .discord-button, .ip-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(to right, #4f46e5, #4338ca);
+  border-radius: 9999px;
+  border: none;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  max-width: 200px;
+  max-height: 48px;
 }
 
-@media (max-width: 384px) {
-  .w3l-coming-soon-page h1 {
-    font-size: 42px !important;
-    line-height: 55px;
-  }
-
-  .w3l-coming-soon-page .countdown>div {
-    font-size: 28px;
-    min-width: 78px;
-  }
-
-  .w3l-coming-soon-page .countdown span {
-    font-size: 10px;
-    letter-spacing: 1px;
-  }
+.home:hover, .discord-button:hover, .ip-button:hover {
+  background: linear-gradient(to right, #6366f1, #4f46e5);
 }
 
-@media (max-width: 376px) {
-  .w3l-coming-soon-page .countdown>div {
-    font-size: 26px;
-    min-width: 74px;
+/* Vertical layout on smaller screens */
+@media (max-width: 768px) {
+  .mt-10.relative.z-10 {
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Adjust spacing between buttons */
   }
-}
 
-@media (max-width: 320px) {
-  .w3l-coming-soon-page .countdown>div {
-    font-size: 22px;
-    min-width: 68px;
+  .home, .discord-button, .ip-button {
+    width: 50%; /* Make buttons take full width on mobile */
+    max-width: none;
   }
 }
