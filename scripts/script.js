@@ -97,4 +97,4 @@ function copyToClipboard(text) {
     alert('Đã copy địa chỉ của server: ' + text);
 }
 
-animate();
+    animate();
