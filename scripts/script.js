@@ -94,7 +94,7 @@ function copyToClipboard(text) {
     tempInput.setSelectionRange(0, 99999); 
     document.execCommand('copy');
     document.body.removeChild(tempInput);
-    alert('Đã copy địa chỉ của server: ' + text);
+    alert('THÔNG BÁO TỪ PHÍA ADMIN: Bọn mình đã đóng server vào lúc 18:00 08/02/2025 và khép lại 7 mùa rồi! Chi tiết các bạn có thể đọc tại https://discord.com/channels/1265607575060348979/1266618333311275070/1337840245739094016 nếu như bạn đã tham gia server Discord của bọn mình! Link vô server Discord đã được copy cho bạn rồi đấy! Sẵn tiện nói luôn thì biết đâu hè bọn mình mở lại nhưng mình không biết nữa á nha!' ); // + text
 }
 
     animate();
